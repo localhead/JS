@@ -2209,7 +2209,8 @@ console.log(addVA);
 */
 // Closures - hardest JS thing (feature)
 // Closure is not a thing someone will make on purpose.
-// It is kinda happens automaticly
+// It is kinda happens automaticly.
+// It is a fancy property of the fucntions in JS
 // We just need to recognize these kinds of situations
 
 // this function will create a closure
@@ -2224,12 +2225,27 @@ const secureBooking = function () {
 
 // to runBooking we will save the function that returns
 // secureBookig function.
-
 const runBooking = secureBooking();
 
 runBooking(); // 1 passenger
 runBooking(); // 2 passenger
 runBooking(); // 3 passenger
+
+// The strange thing is thats
+// expected output should have been looking like this:
+// 1 passenger
+// 1 passenger
+// 1 passenger
+// but runBooking somehow manages to remember the variables
+// inside of secureBooking function
+
+// Closure makes the function remember all the variables
+// that existed at the function's birth place.
+
+// To sum it up: Closures allows you to remember
+// variables inside of the functions
+
+//  WE SHOULD NOT CREATE CLOSURES MANUALY.
 /* 
 
 
