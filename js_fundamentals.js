@@ -2394,3 +2394,7 @@ const onlyPositiveValues = data.filter(function (mov) {
   return mov > 0;
 });
 console.log(onlyPositiveValues);
+
+////fsdfdsfdsd\
+
+//dasdasdassada
