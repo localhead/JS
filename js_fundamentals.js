@@ -2373,16 +2373,16 @@ checkDogs(juliaDogsA, kateDogsA);
 //
 //    MAP method in Arrays
 const data = [200, 450, -400, 3000, -650, -130, 70, 1300];
-const whatIsMap = data.map(function (data) {
+const whatIsMap = data.map(function (arrayElem) {
   return Math.trunc(mov * 1.1);
 });
 
 // Itteration within the data
-const dataDescription = data.map((data, i, arr) => {
+const dataDescription = data.map((arrayElem, arrayIndex, arr) => {
   if (data > 0) {
-    return `Number ${i + 1}: You deposit is ${data}`;
+    return `Number ${arrayIndex + 1}: You deposit is ${arrayElem}`;
   } else {
-    return `Number ${i + 1}: You withdraw is ${Math.abs(data)}`;
+    return `Number ${arrayIndex + 1}: You withdraw is ${Math.abs(arrayElem)}`;
   }
 });
 /* 
@@ -2394,10 +2394,7 @@ const onlyPositiveValues = data.filter(function (mov) {
   return mov > 0;
 });
 console.log(onlyPositiveValues);
-
 /* 
-
-
 
 
 
@@ -2405,6 +2402,12 @@ console.log(onlyPositiveValues);
 // REDUSE method in Arrays.
 // Allows you to Calculating Sum of all elements in array
 const Array00 = [200, -254, 566, 252, 7, -222];
-const balance = movements.reduce(function (accumulator, curInd, array) {
-  return accumulator + curInd;
+const balance = movements.reduce(function (accumulator, curElem, arrayInd) {
+  return accumulator + curElem;
 }, 0);
+
+// Finding highest value in array with reduse
+const maxNumb = movements.reduce((accumulator, curElem, arrayInd) => {
+  if (accumulator > curElem) return acc;
+  else return curElem;
+}, accumulator[0]);

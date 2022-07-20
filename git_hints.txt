@@ -1,0 +1,5 @@
+
+
+
+1) Обновление удаленного репозитория на локальном репе (которых может быть много)
+git pull origin branchname --allow-unrelated-histories
