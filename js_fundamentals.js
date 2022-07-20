@@ -2378,7 +2378,7 @@ const whatIsMap = data.map(function (arrayElem) {
 });
 
 // Itteration within the data
-const dataDescription = data.map((arrayElem, arrayIndex, arr) => {
+const dataDescription = data.map((arrayElem, arrayIndex, WholeArray) => {
   if (data > 0) {
     return `Number ${arrayIndex + 1}: You deposit is ${arrayElem}`;
   } else {
@@ -2411,3 +2411,13 @@ const maxNumb = movements.reduce((accumulator, curElem, arrayInd) => {
   if (accumulator > curElem) return acc;
   else return curElem;
 }, accumulator[0]);
+/* 
+
+
+
+*/
+// 155 The Magic of Chaining Methods
+// Pipeline
+const total = Array00.filter((mov) => mov > 0)
+  .map((mov) => mov * 1.1)
+  .reduce((acc, mov) => acc + mov, 0);
