@@ -2395,6 +2395,16 @@ const onlyPositiveValues = data.filter(function (mov) {
 });
 console.log(onlyPositiveValues);
 
-////fsdfdsfdsd\
+/* 
 
-//dasdasdassada
+
+
+
+
+*/
+// REDUSE method in Arrays.
+// Allows you to Calculating Sum of all elements in array
+const Array00 = [200, -254, 566, 252, 7, -222];
+const balance = movements.reduce(function (accumulator, curInd, array) {
+  return accumulator + curInd;
+}, 0);
