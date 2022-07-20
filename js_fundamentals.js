@@ -2402,15 +2402,24 @@ console.log(onlyPositiveValues);
 // REDUSE method in Arrays.
 // Allows you to Calculating Sum of all elements in array
 const Array00 = [200, -254, 566, 252, 7, -222];
-const balance = movements.reduce(function (accumulator, curElem, arrayInd) {
+const balance = movements.reduce(function (
+  accumulator,
+  curElem,
+  arrayInd,
+  arrayItself
+) {
   return accumulator + curElem;
-}, 0);
+},
+0);
 
 // Finding highest value in array with reduse
-const maxNumb = movements.reduce((accumulator, curElem, arrayInd) => {
-  if (accumulator > curElem) return acc;
-  else return curElem;
-}, accumulator[0]);
+const maxNumb = movements.reduce(
+  (accumulator, curElem, arrayInd, arrayItself) => {
+    if (accumulator > curElem) return acc;
+    else return curElem;
+  },
+  accumulator[0]
+);
 /* 
 
 
@@ -2418,6 +2427,12 @@ const maxNumb = movements.reduce((accumulator, curElem, arrayInd) => {
 */
 // 155 The Magic of Chaining Methods
 // Pipeline
+const Array01 = [200, -254, 566, 252, 7, -222];
 const total = Array00.filter((mov) => mov > 0)
-  .map((mov) => mov * 1.1)
+  .map((value, index, array) => {
+    console.log(array);
+    return Math.trunc(value * 1.1);
+  })
   .reduce((acc, mov) => acc + mov, 0);
+
+console.log(total);

@@ -38,3 +38,5 @@ const averageDog = excludeDogs.reduce(function (accum, curElem, arrayInd) {
   if (arrayInd == 4) return (accum + curElem) / excludeDogs.length;
   else return accum + curElem;
 }, 0);
+
+console.log(averageDog);
