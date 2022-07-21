@@ -2458,3 +2458,10 @@ person2 = {
 const arrayPersons = [person1, person2];
 
 console.log(arrayPersons.find((arrElem) => (arrElem.name = "Steve")));
+/* 
+
+
+
+*/
+// 160 The findIndex Methods
+const index = arrayPersons.findIndex((acc) => acc.name === "Steve"); // 0
