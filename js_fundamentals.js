@@ -2436,3 +2436,25 @@ const total = Array00.filter((mov) => mov > 0)
   .reduce((acc, mov) => acc + mov, 0);
 
 console.log(total);
+/* 
+
+
+
+
+*/
+// 157 The find Method
+// this method allows you to find elements by condition. Returns only the first element, not the array!
+const Array02 = [200, -254, 566, 252, 7, -222];
+console.log(Array02.find((arrElem) => arrElem < 0));
+
+person1 = {
+  name: "Steve",
+  age: 18,
+};
+person2 = {
+  name: "Steve",
+  age: 18,
+};
+const arrayPersons = [person1, person2];
+
+console.log(arrayPersons.find((arrElem) => (arrElem.name = "Steve")));

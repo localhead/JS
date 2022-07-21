@@ -1,10 +1,13 @@
-//    MAP method in Arrays
-const Array00 = [200, -254, 566, 252, 7, -222];
-const total = Array00.filter((mov) => mov > 0)
-  .map((value, index, array) => {
-    console.log(array);
-    return Math.trunc(value * 1.1);
-  })
-  .reduce((acc, mov) => acc + mov, 0);
+person1 = {
+  name: "Steve",
+  age: 18,
+};
 
-console.log(total);
+person2 = {
+  name: "Mary",
+  age: 22,
+};
+
+const arrayPersons = [person1, person2];
+
+console.log(arrayPersons.find((arrElem) => arrElem.age === 22));
