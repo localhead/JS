@@ -2520,3 +2520,19 @@ array02.sort((a, b) => {
 // shorter version of decending sorting that came above:
 array02.sort((a, b) => b - a);
 console.log(array02);
+/* 
+
+
+
+
+*/
+// 165 Programaticly creating and filling arrays 
+const array03 = new Array(7); // [empty x 7]
+// filling the array with things
+const fromthisIndex = 3;
+const tillThisIndex = 5;
+array03.fill(1, fromthisIndex, tillThisIndex);
+
+// thing that creates new array
+const eweww = Array.from({ length: 7 }, () => 1); // [1,1,1,1,1,1,1]
+const erere = Array.from,({length : 4}, (currentEl, itInd) => itInd + 1); // [1,2,3,4]
