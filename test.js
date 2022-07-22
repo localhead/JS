@@ -1,13 +1,19 @@
-person1 = {
-  name: "Steve",
-  age: 18,
-};
+const array02 = [200, -254, 566, 252, 7, -222];
+const owners = ["Zack", "Albert", "Bill", "Cylian", "Martha"];
+console.log(owners.sort());
 
-person2 = {
-  name: "Mary",
-  age: 22,
-};
+// Sorting arrays in accending order
+array02.sort((a, b) => {
+  if (a > b) return 1;
+  if (b > a) return -1;
+});
 
-const arrayPersons = [person1, person2];
+console.log(array02);
 
-console.log(arrayPersons.find((arrElem) => arrElem.age === 22));
+// Sorting arrays in decending order
+array02.sort((a, b) => {
+  if (a > b) return -1;
+  if (b > a) return 1;
+});
+array02.sort((a, b) => a - b);
+console.log(array02);

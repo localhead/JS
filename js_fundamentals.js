@@ -2465,3 +2465,58 @@ console.log(arrayPersons.find((arrElem) => (arrElem.name = "Steve")));
 */
 // 160 The findIndex Methods
 const index = arrayPersons.findIndex((acc) => acc.name === "Steve"); // 0
+/* 
+
+
+
+*/
+// 161 some and every Methods
+// finding if there is something that passes the condition
+// SOME - only one element should pass the condition
+const someThingShouldPass = Array00.some((mov) => mov > 0); // true
+
+// Separate callBack
+const sepCallback = (mov) => mov > 0;
+
+// EVERY - everythings should pass the condition
+const everyThingShouldPass = Array00.some(sepCallback); // false
+/* 
+
+
+
+*/
+/// 162 flat and flapMap
+
+const array12_0 = [[1, 2, 3], [4, 5, 6], [7, 8], 9, 11];
+console.log(array12_0.flat()); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
+
+const array13_1 = [[[1, 2], 3], [4, [5, 6, 7]], 8, 9, 11];
+console.log(array13_1.flat(2)); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
+/* 
+
+
+
+*/
+/// 163 sorting arrays
+const array02 = [200, -254, 566, 252, 7, -222];
+const owners = ["Zack", "Albert", "Bill", "Cylian", "Martha"];
+console.log(owners.sort());
+
+// Sorting arrays in accending order [mutates original]
+array02.sort((a, b) => {
+  if (a > b) return 1;
+  if (b > a) return -1;
+});
+console.log(array02);
+
+// shorter version of accending sorting that came above:
+array02.sort((a, b) => a - b);
+
+// Sorting arrays in decending order [mutates original]
+array02.sort((a, b) => {
+  if (a > b) return -1;
+  if (b > a) return 1;
+});
+// shorter version of decending sorting that came above:
+array02.sort((a, b) => b - a);
+console.log(array02);
