@@ -1,12 +1,7 @@
 "use strict";
-const diameterSolarSystemKm = 287_460_000_000;
-console.log(diameterSolarSystemKm); // same as 287460000000
+const now = new Date();
+console.log(now);
 
-const priceCents = 354_859;
-console.log(priceCents); // 354859
+console.log(new Date("Aug 02 2020 18:02:41"));
 
-const transferFee1 = 15_00;
-console.log(transferFee1);
-
-const transferFee2 = 1_500;
-console.log(transferFee2);
+console.log(new Date(2037, 10, 19, 15, 23, 5));

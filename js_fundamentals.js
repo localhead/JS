@@ -2739,3 +2739,41 @@ console.log(transferFee1);
 
 const transferFee2 = 1_500
 console.log(transferFee2);
+/* 
+
+
+*/
+// 174 BigInt
+
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(56565656548484818288418184818484818484818n); // n transforms big number into BigInt
+console.log(BigInt(4545485696525632145698856366547885696));
+
+console.log(Math.sqrt(564n)) // math operators will not work with BigInt;
+/* 
+
+
+
+
+*/
+// 175 Dates & Times
+// Creating of dates
+
+const now = new Date();
+console.log(now); // 2022-07-25T18:04:02.408Z
+
+// Parsing the strings 
+console.log(new Date('Aug 02 2020 18:02:41'));
+
+console.log(new Date(2037, 10, 19, 15 , 23, 5)); // 2037-11-19T12:23:05.000Z
+console.log(new Date(0)) // date since the begining UNIX time (launch); // Thu Jan 01 1970 01:00:00
+
+// working with dates
+const futureTime = new Date(2037, 10, 19, 15 , 23)
+console.log(futureTime.getFullYear()); // 2037
+console.log(futureTime.getFullMouth()); // 10
+console.log(futureTime.getFullDate()); // 19
+console.log(futureTime.getFullDay()); // day of the week! 4
+//etc for hours, minutes and seconds
+console.log(futureTime.toISOString()) // 2037-11-19T12:23:05.000Z
+console.log(futureTime.getTime()); // how much miliseconds has pasted since UNIX time launch
