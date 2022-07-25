@@ -2777,3 +2777,4 @@ console.log(futureTime.getFullDay()); // day of the week! 4
 //etc for hours, minutes and seconds
 console.log(futureTime.toISOString()) // 2037-11-19T12:23:05.000Z
 console.log(futureTime.getTime()); // how much miliseconds has pasted since UNIX time launch
+
