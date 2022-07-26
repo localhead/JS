@@ -2777,4 +2777,15 @@ console.log(futureTime.getFullDay()); // day of the week! 4
 //etc for hours, minutes and seconds
 console.log(futureTime.toISOString()) // 2037-11-19T12:23:05.000Z
 console.log(futureTime.getTime()); // how much miliseconds has pasted since UNIX time launch
+/* 
 
+
+
+*/
+// 177 Operations With Dates
+const futureDate1 = new Date(2022, 7, 26, 15, 23);
+const futureDate2 = new Date(1994, 10, 14, 15, 23);
+const calcDaysPassed = (date1, date2) =>
+  Math.abs((date2 - date1) / (1000 * 60 * 60 * 24));
+
+console.log(calcDaysPassed(futureDate2, futureDate1)); // 10147
