@@ -2789,3 +2789,85 @@ const calcDaysPassed = (date1, date2) =>
   Math.abs((date2 - date1) / (1000 * 60 * 60 * 24));
 
 console.log(calcDaysPassed(futureDate2, futureDate1)); // 10147
+/* 
+
+
+
+*/
+// 178 Internationalizing Dates (Intl) API
+// more info in bankits project
+const accountJessica = {
+  owner: "Jessica Davis",
+  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+  interestRate: 1.5,
+  pin: 2222,
+  movementsDates: [
+    "2019-11-01T13:15:33.035Z",
+    "2019-11-30T09:48:16.867Z",
+    "2019-12-25T06:04:23.907Z",
+    "2020-01-25T14:18:46.235Z",
+    "2020-02-05T16:33:06.386Z",
+    "2020-04-10T14:43:26.374Z",
+    "2020-06-25T18:49:59.371Z",
+    "2020-07-26T12:01:20.894Z",
+  ],
+  currency: "USD",
+  locale: "en-US",
+};
+
+const options = {
+  hour: "numeric",
+  minute: "numeric",
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  weekday: "short", //'short' /'narrow'
+};
+
+const date = new Date(accountJessica.movementsDates[0]);
+const InternationalizedformatDate = new Intl.DateTimeFormat(
+  accountJessica.locale,
+  options
+).format(date);
+
+console.log(InternationalizedformatDate);
+/* 
+
+
+
+*/
+// 179 Internationalizing Numbers (Intl)
+const number = 3884764.23;
+
+const options = {
+  style: "percent", // unit, currency, percent
+  unit: "mile-per-hour",  // celsius
+};
+
+console.log("US: ", new Intl.NumberFormat("en-US", options).format(number));
+/* 
+
+
+*/
+// 180 Timers_ setTimeout and setInterval
+
+// this event will happen after 3 SECONDS. 
+// HOWEVER !!! THE REST OF THE CODE BELlOW WILL CONTINUE TO EXECUTE!
+// This is the mechanism called Asynchronism in JS!
+setTimeout(() => console.log('Here is your pizza'), 5000); 
+console.log('Look I am still here and after 5 seconds you will see the message above!');
+
+// using this function with an arguments
+
+const arrayIng = ['pinaaples', 'caviar']
+const pizzaTimer = setTimeout((ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2}`), 1000, ...arrayIng); 
+
+// canceling the timer
+if (arrayIng.includes('pinaaples')) clearTimeout(pizzaTimer);
+
+
+// making some action execute every N seconds with SetInteral
+SetInteral(function () {
+  const now = new Date();
+  console.log(now);
+}, 1000)

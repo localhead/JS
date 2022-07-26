@@ -1,8 +1,18 @@
 "use strict";
+// 180 Timers_ setTimeout and setInterval
 
-const futureDate1 = new Date(2022, 7, 26, 15, 23);
-const futureDate2 = new Date(1994, 10, 14, 15, 23);
-const calcDaysPassed = (date1, date2) =>
-  Math.abs((date2 - date1) / (1000 * 60 * 60 * 24));
+// this event will happen after 3 SECONDS.
+// HOWEVER !!! THE REST OF THE CODE BELlOW WILL CONTINUE TO EXECUTE!
+// This is the mechanism called Asynchronism in JS!
+setTimeout(() => console.log("Here is your pizza"), 5000);
+console.log(
+  "Look I am still here and after 5 seconds you will see the message above!"
+);
 
-console.log(calcDaysPassed(futureDate2, futureDate1));
+// using this fucntion with an arguments
+setTimeout(
+  (ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2}`),
+  1000,
+  "bread",
+  "apple"
+);
