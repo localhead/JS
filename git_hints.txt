@@ -1,5 +1,18 @@
 
+https://worldvectorlogo.com/
 
+pictures to paste in readme github
+https://www.youtube.com/watch?v=nvPOUdz5PL4&ab_channel=DanShahin
 
 1) Обновление удаленного репозитория на локальном репе (которых может быть много)
 git pull origin branchname --allow-unrelated-histories
+
+2) Удаление ветки локально и удаленно
+$ git push -d <remote_name> <branchname> (удаленно)
+$ git branch -d <branchname> (локально)
+
+3) Истории комитов
+git log --oneline
+
+4) Пушить если не пушиться (форспуш)
+git push origin main -f

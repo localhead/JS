@@ -2796,6 +2796,8 @@ console.log(calcDaysPassed(futureDate2, futureDate1)); // 10147
 */
 // 178 Internationalizing Dates (Intl) API
 // more info in bankits project
+// http://www.lingoes.net/en/translator/langcode.htm
+// https://www.easymarkets.com/syc/learn-centre/discover-trading/currency-acronyms-and-abbreviations/
 const accountJessica = {
   owner: "Jessica Davis",
   movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
