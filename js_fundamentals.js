@@ -2873,3 +2873,72 @@ SetInteral(function () {
   const now = new Date();
   console.log(now);
 }, 1000)
+/* 
+
+
+
+
+
+*/
+// 13 Advanced DOM and Events
+/* 
+
+
+*/
+// Selecting elements
+console.log(document.documentElement);
+console.log(document.head);
+console.log(document.body);
+
+document.querySelector('.header')
+const allSections = document.querySelectorAll('.section')
+console.log(allSections);
+
+document.getElementById('section--1')
+const allButtons = document.getElementsByTagName('button')
+console.log(allButtons);
+
+console.log(document.getElementsByClassName('btn'));
+
+// Creating and inserting elements
+// insertAdjacentHTML - check in out int bank project
+const message0 = document.createElement('div');
+message0.classList.add('cookie-message');
+message0.innerHTML = 'We use cookies to improve functionality and analytics. <button class = "btn btn--close-cookie">Got it.</button>';
+
+document.querySelector('.header').append(message0)
+/* 
+
+
+
+*/
+message.style.backgroundColor = '#373883d'
+message.style.width = '120%'
+// with this command you can see all the properties objects has
+console.log(getComputedStyle(message));
+// or more exact
+console.log(getComputedStyle(message).height)
+/* 
+
+
+*/
+// Attributes
+// Getting atributes from element.(img)
+const logo = document.querySelector('.nav__logo')
+console.log(logo.alt);
+console.log(logo.src);
+console.log(logo.className);
+
+logo.alt = 'New attribute'
+// getting non-standart atribute
+console.log(logo.getAttribute('designer')); // name of designer
+logo.setAttribute('company', 'Apple')
+
+console.log(logo.src); // http://....../img.logo.png
+console.log(logo.getAttribute('src')); // img/logo.png
+/* 
+
+
+
+*/
+// 189 Types of Events and Event Handlers
