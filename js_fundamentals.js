@@ -2939,6 +2939,47 @@ console.log(logo.getAttribute('src')); // img/logo.png
 /* 
 
 
+*/
+// 190 Event Propagation_ Bubbling and Capturing
+/* 
+here is something important to know:
+you have this tree elements:
+- nav
+-- nav_links
+--- nav_link
+
+then you put an addEventListener on each of them, and they genereate a random color
+background on click. The thing is that if you click 
+ONLY on nav_link event which is a child element of nav_links and nav, then the 
+background color will change on each this 3 elements... 
+Even though you did not even touch them.
+
+Event listener on Child Element TRIGGERS also 
+event Listeners on Parent elements if they existed!!!!!!
+
+to fix this you can do the following
 
 */
-// 189 Types of Events and Event Handlers
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('LINK', e.target, e.currentTarget);
+  console.log(e.currentTarget === this);
+
+  // Stop propagation
+  // e.stopPropagation();
+});
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('CONTAINER', e.target, e.currentTarget);
+});
+
+document.querySelector('.nav').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('NAV', e.target, e.currentTarget);
+});
