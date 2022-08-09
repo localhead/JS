@@ -4,6 +4,10 @@ https://worldvectorlogo.com/
 pictures to paste in readme github
 https://www.youtube.com/watch?v=nvPOUdz5PL4&ab_channel=DanShahin
 
+collapce/expand all code blocks
+Fold all: Ctrl + K then Ctrl + 0 (the zero number key)
+Unfold all: Ctrl + K then Ctrl + J
+
 1) Обновление удаленного репозитория на локальном репе (которых может быть много)
 git pull origin branchname --allow-unrelated-histories
 
