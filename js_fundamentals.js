@@ -2951,8 +2951,8 @@ you have this tree elements:
 then you put an addEventListener on each of them, and they genereate a random color
 background on click. The thing is that if you click 
 ONLY on nav_link event which is a child element of nav_links and nav, then the 
-background color will change on each this 3 elements... 
-Even though you did not even touch them.
+background color will change on each these 3 elements... 
+Even though you did not even touch 2 of them.
 
 Event listener on Child Element TRIGGERS also 
 event Listeners on Parent elements if they existed!!!!!!
@@ -2983,3 +2983,23 @@ document.querySelector('.nav').addEventListener('click', function (e) {
   this.style.backgroundColor = randomColor();
   console.log('NAV', e.target, e.currentTarget);
 });
+/* 
+
+
+
+*/
+// 202 Lifecycle DOM Events
+// 1 - DOM content loaded
+document.addEventListener('DOMContentLoaded', function(event) {
+  console.log('html loaded and DOM tree built', event);
+})
+// 2 second event that happens 
+document.addEventListener('load', function(event) {
+  console.log('Page fully loaded', event);
+})
+// 3 event before leaving the page ('Are you sure that you want to leave the page?)
+document.addEventListener('beforeunload', function(event) {
+  event.preventDefault()
+  console.log('Are you sure?', event);
+  event.returnValue = ''
+})
