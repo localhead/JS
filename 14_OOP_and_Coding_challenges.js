@@ -456,3 +456,144 @@ Vince.calcCock(18);
 Vince.course("Math");
 Vince.init("Vince", 1997);
 console.log(Vince);
+/* 
+
+
+
+
+*/
+// 222 Another Class Example
+// Incapsulation and Data Privacy
+// We need it in order to save data inside of a class from accident manipulation from outside
+// When we expose only a small interface, consisting of a few public methods - we can change incapsulated methods with more confident
+// Its better to make everything incapsulated, and then decide which of them will be public.
+
+// Its weird but devs agreed that if u want to show in your code that some prop or method should not be access from outside
+// you just should add underscore before the name: movements(not private) becomes _movements(private)
+class Account {
+  // Public fields
+  // locale = navigator.language;
+
+  // Private fields. Cannot be accesible from outside.
+  #movements = [];
+  #pin;
+
+  constructor(name, currency, pin) {
+    this.owner = name;
+    this.currency = currency;
+    // Protected props
+    this.#pin = pin;
+    // this._movements = [];
+    // this.locale = navigator.language;
+  }
+
+  // Public interface of this Object
+  deposit(amount) {
+    this.#movements.push(amount);
+    return this; // this is for chaining. so we could use methods
+  }
+
+  widthdraw(amount) {
+    this.deposit(-amount);
+    return this;
+  }
+
+  // This method should not be the part of public API
+  // Private method that cannot be seen
+  #approveLoan(amount) {
+    return true;
+  }
+
+  requestLoan(amount) {
+    if (this.#approveLoan(amount)) {
+      this.deposit(amount);
+      console.log("Loan Approved!");
+    }
+    return this;
+  }
+}
+
+const account1 = new Account("Bob", "Dollar", 1111);
+account1.deposit(250);
+account1.widthdraw(140);
+
+//  Private field '#movements' must be declared in an enclosing class
+console.log(account1.#movements);
+//  SyntaxError: Private field '#approveLoan' must be declared in an enclosing class
+console.log(account1.#approveLoan());
+/* 
+
+
+
+
+*/
+// 225 Chaining Methods in classes. Add return this; under every method of class and thats it
+account1.deposit(250).deposit(500).widthdraw(144).requestLoan(444);
+/* 
+
+
+
+
+*/
+// Coding challenge #4
+
+class TheGasCarCl {
+  constructor(model, speed) {
+    this.model = model;
+    this.speed = speed;
+  }
+
+  accelerate(amount) {
+    this.speed += amount;
+
+    return this;
+  }
+
+  brake(amount) {
+    this.speed -= amount;
+
+    return this;
+  }
+
+  Info() {
+    console.log(`Car is ${this.model} / Speed is ${this.speed} km/h`);
+    return this;
+  }
+}
+
+class EVCl extends TheGasCarCl {
+  // this prop will not accessed from parent class
+  #charge;
+
+  constructor(model, speed, charge) {
+    super(model, speed);
+    this.#charge = charge;
+  }
+
+  chargeB(amount) {
+    this.#charge += amount;
+    return this;
+  }
+
+  // We can change #charge only in this child class
+  logCharge() {
+    console.log("Charge is " + this.#charge);
+    return this;
+  }
+}
+
+const tesla3 = new EVCl("Tesla Model 3", 150, 75);
+
+tesla3
+  .accelerate(10)
+  .chargeB(-15)
+  .Info()
+  .logCharge()
+  .accelerate(20)
+  .chargeB(-25)
+  .Info()
+  .logCharge()
+  .brake(20)
+  .chargeB(8)
+  .Info()
+  .logCharge();
